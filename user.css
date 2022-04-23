@@ -43,6 +43,10 @@ body {
     letter-spacing: normal;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .main-type-mesto,
 .main-type-mestoBold,
 .main-type-ballad,
@@ -89,8 +93,22 @@ input {
     background-image: unset !important;
 }
 
-.main-playButton-PlayButton.main-playButton-primary {
-    color: white;
+.main-actionBar-ActionBarRow > button:first-of-type >:first-child {
+    color: var(--spice-subtext);
+    background-color: var(--spice-button);
+}
+.main-actionBar-ActionBarRow > button:first-of-type:hover >:first-child {
+    color: var(--spice-text);
+    background-color: var(--spice-button-active);
+}
+
+.main-actionBar-ActionBarRow input[role="searchbox"][aria-hidden=true]{
+    cursor: default;
+}
+.main-actionBar-ActionBarRow button[aria-label="Download"]:hover,
+.main-actionBar-ActionBarRow div button[type="button"]:hover,
+.main-view-container__scroll-node-child button[type="button"]:hover {
+    color: var(--spice-subtext);
 }
 
 .connect-title, .connect-header {
@@ -154,6 +172,26 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
     line-height: 120px !important;
 }
 
+
+.main-rootlist-rootlistItemLink:hover{
+    cursor: pointer;
+}
+.main-rootlist-rootlistItemLink:not(.main-rootlist-rootlistItemLinkActive):hover,
+.main-navBar-navBarLink:not(.main-navBar-navBarLinkActive):hover,
+.main-createPlaylistButton-button:not(.active):hover,
+.main-collectionLinkButton-collectionLinkButton:not(.active):hover{
+    background: var(--spice-button-active);
+}
+.main-rootlist-rootlistItemLink:hover .main-rootlist-textWrapper,
+.main-collectionLinkButton-collectionLinkButton:hover .main-collectionLinkButton-collectionLinkText,
+.main-createPlaylistButton-button:hover .main-createPlaylistButton-text,
+.main-navBar-navBarLink:hover > span{
+    color: var(--spice-text);
+}
+.main-rootlist-textWrapper:hover{
+    color: inherit;
+}
+
 /** Hightlight selected playlist */
 .main-rootlist-rootlistItemLink.main-rootlist-rootlistItemLinkActive {
     background: var(--spice-button);
@@ -173,11 +211,6 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 .main-contextMenu-menuItemButton:not(.main-contextMenu-disabled):focus,
 .main-contextMenu-menuItemButton:not(.main-contextMenu-disabled):hover {
     color: var(--spice-main);
-}
-
-.main-playPauseButton-button {
-    background-color: var(--spice-button);
-    color: white;
 }
 
 /** Queue page header */
@@ -207,6 +240,13 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 
 .main-cardImage-imagePlaceholder, .main-cardImage-image {
     border-radius: var(--cover-border-radius);
+}
+
+.main-card-PlayButtonContainer button:hover >:first-child,
+.main-heroCard-PlayButtonContainer button:hover >:first-child,
+.main-shelf-topRow + div button[aria-label="Play"]:hover >:first-child{
+    background-color: var(--spice-button);
+    color: var(--spice-text);
 }
 
 .main-rootlist-rootlistDivider {
@@ -393,6 +433,14 @@ html.sidebar-hide-text .GlueDropTarget span {
     color: var(--spice-button);
     fill: var(--spice-button);
 }
+.main-topBar-historyButtons button:enabled:hover  svg {
+    color: var(--spice-button-active);
+    fill: var(--spice-button-active);
+}
+
+.queue-tabBar-header > a:not([aria-current]):hover {
+    background-color: var(--spice-tab-hover);
+}
 
 .playback-bar__progress-time,
 .main-playbackBarRemainingTime-container {
@@ -524,13 +572,6 @@ html.sidebar-hide-text .main-rootlist-rootlistItem {
     height: 56px;
 }
 
-.main-navBar-navBarLink .icon,
-.main-collectionLinkButton-icon,
-.main-createPlaylistButton-icon,
-.main-collectionLinkButton-icon {
-    margin-right: 24px;
-}
-
 li.GlueDropTarget {
     padding: 0 8px;
 }
@@ -637,6 +678,9 @@ li.GlueDropTarget {
     width: 32px !important;
     height: 32px !important;
     color: var(--spice-button);
+}
+.main-playPauseButton-button:hover svg {
+    color: var(--spice-button-active);
 }
 
 /** Main container */
