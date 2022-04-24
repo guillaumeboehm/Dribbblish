@@ -43,7 +43,9 @@ body {
     letter-spacing: normal;
 }
 
-button:hover {
+
+button:hover,
+.volume-bar .progress-bar:hover {
     cursor: pointer;
 }
 
@@ -65,6 +67,10 @@ button:hover {
     letter-spacing: -.03em !important;
 }
 
+div[style*="--lyrics-color"] p[class*="TypeElement"]{
+    color: var(--spice-text);
+}
+
 .main-rootlist-rootlistDivider {
     display: none;
 }
@@ -80,6 +86,10 @@ input {
 .x-searchInput-searchInputSearchIcon,
 .x-searchInput-searchInputClearButton {
     color: var(--spice-text) !important;
+}
+
+#searchPage a:hover {
+    filter: brightness(0.7);
 }
 
 .main-home-homeHeader,
@@ -210,7 +220,7 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 .main-contextMenu-menuItemButton,
 .main-contextMenu-menuItemButton:not(.main-contextMenu-disabled):focus,
 .main-contextMenu-menuItemButton:not(.main-contextMenu-disabled):hover {
-    color: var(--spice-main);
+    color: var(--spice-text);
 }
 
 /** Queue page header */
@@ -286,12 +296,6 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 .main-buddyFeed-activityMetadata .main-buddyFeed-playbackContextLink,
 .main-buddyFeed-activityMetadata .main-buddyFeed-timestamp {
     color: rgba(var(--spice-rgb-sidebar-text), 0.8);
-}
-
-.main-buddyFeed-buddyFeedRoot .main-avatar-avatar,
-.main-buddyFeed-buddyFeedRoot .main-buddyFeed-overlay {
-    width: 32px !important;
-    height: 32px !important;
 }
 
 .main-avatar-avatar.main-avatar-withBadge:after {
