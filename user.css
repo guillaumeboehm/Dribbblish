@@ -194,11 +194,24 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 }
 .main-rootlist-rootlistItemLink:hover .main-rootlist-textWrapper,
 .main-collectionLinkButton-collectionLinkButton:hover .main-collectionLinkButton-collectionLinkText,
-.main-createPlaylistButton-button:hover .main-createPlaylistButton-text,
-.main-navBar-navBarLink:hover > span{
-    color: var(--spice-text);
+.main-createPlaylistButton-button:hover .main-createPlaylistButton-text{
+    color: var(--spice-subtext);
 }
 .main-rootlist-textWrapper:hover{
+    color: inherit;
+}
+
+.main-navBar-navBar>div>div> div:not(.os-host):not(.GlueDropTarget) > div {
+    display: none;
+}
+.main-navBar-navBar>div>div>div.os-host li a {
+    color: var(--spice-text);
+    cursor: pointer;
+}
+.main-navBar-navBar>div>div>div.os-host li a:hover{
+    color: white;
+}
+.main-navBar-navBar>div>div>div.os-host li a span:hover {
     color: inherit;
 }
 
@@ -241,6 +254,10 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
     color: var(--spice-text) !important;
 }
 
+aside[aria-label="Friend Activity"]>div:not([class*="LayoutResizer"])>div>div:first-child {
+    color: var(--spice-text);
+}
+
 /** Cards */
 .main-cardImage-imageWrapper {
     background-color: transparent;
@@ -257,6 +274,13 @@ span.artist-artistVerifiedBadge-badge svg > path:last-of-type {
 .main-shelf-topRow + div button[aria-label="Play"]:hover >:first-child{
     background-color: var(--spice-button);
     color: var(--spice-text);
+}
+
+.main-cardHeader-link >:first-child {
+    color: var(--spice-subtext);
+}
+.main-card-card {
+    border-radius: 5px !important;
 }
 
 .main-rootlist-rootlistDivider {
@@ -415,6 +439,10 @@ html.sidebar-hide-text .main-rootlist-rootlistItem span,
 html.sidebar-hide-text .main-rootlist-statusIcons,
 html.sidebar-hide-text .GlueDropTarget span {
     display: none;
+}
+
+aside[aria-label="Friend Activity"] div:not([class*="LayoutResizer"]) {
+    box-shadow: none;
 }
 
 .main-rootlist-rootlist {
@@ -700,6 +728,11 @@ li.GlueDropTarget {
         padding-left: 128px;
         padding-right: 128px;
     }
+}
+
+main[aria-label*="Web Player"] > div:first-child,
+main:not([aria-label]) > div:first-child {
+    display: none;
 }
 
 .main-collectionLinkButton-collectionLinkButton .main-collectionLinkButton-icon,
